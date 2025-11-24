@@ -1,0 +1,396 @@
+/* ============================================
+   LEARNING MATERIALS & HELP PAGE STYLES
+   Member 07 - Career Suggestion System
+   ============================================ */
+
+/* Materials Grid Layout */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+/* Material Card */
+.material-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.material-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.material-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.material-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Material Header */
+.material-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+/* Material Type Badges */
+.material-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.material-type.video {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.material-type.article {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.material-type.course {
+    background-color: var(--secondary-light);
+    color: var(--secondary-color);
+}
+
+.material-type.book {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Difficulty Badge */
+.difficulty-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty-badge.beginner {
+    background-color: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.difficulty-badge.intermediate {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.difficulty-badge.advanced {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Material Title */
+.material-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Material Description */
+.material-description {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Material Footer */
+.material-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--light-gray);
+}
+
+.career-tag {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* ============================================
+   HELP PAGE STYLES
+   ============================================ */
+
+/* Quick Help Grid */
+.quick-help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Help Card */
+.help-card {
+    background: var(--white);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
+}
+
+.help-card i {
+    font-size: 56px;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+}
+
+.help-card:hover i {
+    transform: scale(1.1);
+}
+
+.help-card h4 {
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: 18px;
+}
+
+.help-card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* FAQ Styles */
+.faq-category {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.faq-item {
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: all 0.3s ease;
+    color: var(--dark);
+}
+
+.faq-question:hover {
+    background-color: #e5e7eb;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-question {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.faq-item.active .faq-question i {
+    color: var(--white);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 var(--spacing-lg);
+    background: var(--white);
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 600px;
+    padding: var(--spacing-lg);
+    border-top: 2px solid var(--primary-light);
+}
+
+/* Tutorial Grid */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* Tutorial Card */
+.tutorial-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tutorial-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
+}
+
+.tutorial-thumbnail {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorial-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.tutorial-thumbnail i {
+    font-size: 72px;
+    position: relative;
+    z-index: 1;
+}
+
+.tutorial-content {
+    padding: var(--spacing-lg);
+}
+
+.tutorial-content h4 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 18px;
+    color: var(--dark);
+}
+
+.tutorial-content p {
+    font-size: 14px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Contact Form Styling */
+#contactForm {
+    max-width: 700px;
+}
+
+#contactResult .alert {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-help-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: var(--spacing-lg);
+    }
+    
+    .material-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .tutorial-thumbnail {
