@@ -1,0 +1,230 @@
+/* Home Page Specific Styles */
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.welcome-content h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.welcome-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.welcome-icon {
+    font-size: 80px;
+    opacity: 0.2;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.stat-info h3 {
+    font-size: 28px;
+    margin-bottom: 4px;
+    color: var(--dark);
+}
+
+.stat-info p {
+    color: var(--gray);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Dashboard Content Layout */
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-xl);
+}
+
+.main-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Career Match Content */
+.career-match-content {
+    padding: var(--spacing-lg);
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.match-header h3 {
+    margin: 0;
+    color: var(--dark);
+}
+
+.match-percentage {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.action-btn i {
+    font-size: 32px;
+}
+
+.action-btn span {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Progress Item */
+.progress-item {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.activity-item i {
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-column {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .welcome-icon {
+        font-size: 60px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .match-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
